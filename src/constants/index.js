@@ -491,16 +491,59 @@ export const locations = {
 };
 
 const INITIAL_Z_INDEX = 1000;
+const DEFAULT_WIDTH = 60
+const DEFAULT_HEIGHT = 70
+
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  contact: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  resume: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  safari: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  photos: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  terminal: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  txtfile: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
+  imgfile: {
+    isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isFullscreen: false, width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT,
+    prevWidth: null,
+    prevHeight: null,
+  },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
