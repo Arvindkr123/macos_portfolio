@@ -1,6 +1,7 @@
 import { WindowControls } from '#components'
+import { blogPosts } from '#constants'
 import WindowWrapper from '#hoc/WindowWrapper'
-import { ChevronLeft, ChevronRight, Copy, PanelLeft, Plus, Search, Share, ShieldHalf } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Copy, MoveRight, PanelLeft, Plus, Search, Share, ShieldHalf } from 'lucide-react'
 import React from 'react'
 
 const Safari = () => {
@@ -26,9 +27,28 @@ const Safari = () => {
                     <Copy className='icon'/>
                 </div>
             </div>
-
-            <div className="blog">
-                <h2>My Developer Blog</h2>
+            <div className="h-screen overflow-scroll overflow-y-scroll">
+                <div className="blog mb-28">
+                    <h2>My Developer Blog</h2>
+                    <div className="space-y-8 h-lvh overflow-y-auto">
+                        {
+                            blogPosts.map((blog) => {
+                                return <div className={"blog-post"} key={blog.id}>
+                                    <div className="col-span-2">
+                                        <img src={blog.image} alt={blog.title} />
+                                    </div>
+                                    <div className="content">
+                                        <p>{blog.date}</p>
+                                        <h3>{blog.title}</h3>
+                                        <a href={blog.link} target='_blank' rel='noopnnernoreferrer'>
+                                            Check out the full post <MoveRight className='icon-hover' />
+                                        </a>
+                                    </div>
+                                </div>
+                            })
+                        }
+                    </div>
+                </div>
             </div>
         </>
     )
