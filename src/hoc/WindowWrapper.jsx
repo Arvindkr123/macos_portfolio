@@ -9,7 +9,6 @@ const WindowWrapper = (Component, windowKey) => {
         const { focusWindow, windows } = useWindowStore();
         const { isOpen, zIndex, width, height } = windows[windowKey];
         const ref = useRef(null);
-
         useGSAP(() => {
             const el = ref.current;
             if (!el) return;
@@ -32,17 +31,36 @@ const WindowWrapper = (Component, windowKey) => {
             }
         }, [isOpen]);
 
-        useGSAP(() => {
-            const el = ref.current;
-            if (!el) return;
+        useGSAP(
+            () => {
+                if (!ref.current) return;
 
-            gsap.to(el, {
-                width: `${width}%`,
-                height: `${height}%`,
-                duration: 0.35,
-                ease: 'power3.inOut',
-            });
-        }, [width, height]);
+                gsap.killTweensOf(ref.current);
+
+                gsap.to(ref.current, {
+                    width: `${width}%`,
+                    height: `${height}%`,
+
+                    // ✨ subtle macOS polish (NOT proportional scale)
+                    scaleX: 1.02,
+                    scaleY: 1.02,
+
+                    duration: 0.35,
+                    ease: "power3.inOut",
+                });
+
+                // Return scale back to 1 (this is the magic)
+                gsap.to(ref.current, {
+                    scaleX: 1,
+                    scaleY: 1,
+                    duration: 0.25,
+                    ease: "power2.out",
+                    delay: 0.15,
+                });
+            },
+            [width, height] 
+        );
+
 
         useGSAP(() => {
             const el = ref.current;

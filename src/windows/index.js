@@ -4,11 +4,13 @@ import Resume from "./Resume";
 import Finder from "./Finder";
 import Text from "./Text";
 import ImageWindowContent from "./ImageWindowContent";
+import Contact from "./Contacts";
 export {
     Terminal,
     Safari, 
     Resume,
     Finder,
     Text,
-    ImageWindowContent
+    ImageWindowContent,
+    Contact
 }

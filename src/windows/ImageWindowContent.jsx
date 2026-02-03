@@ -13,9 +13,9 @@ const ImageWindowContent = () => {
     return (
         <>
             {/* Header */}
-            <div id="window-header" >
+            <div id="window-header" className="select-none cursor-default" >
                 <WindowControls target="imgfile" />
-                <h2 className="truncate">{name}</h2>
+                <h2 className="truncate pointer-events-none" >{name}</h2>
             </div>
             <div className="w-full h-[calc(100%-48px)] overflow-auto flex items-center justify-center p-5">
                 {imageUrl && (

@@ -43,8 +43,8 @@ const Finder = () => {
 
     return (
         <>
-            <div id="window-header">
-                <WindowControls target={'finder'} />
+            <div id="window-header" className="select-none cursor-default">
+                <WindowControls target={'finder'}  />
                 <Search className='icon' />
             </div>
             <div className="bg-white flex h-full">

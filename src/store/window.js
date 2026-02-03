@@ -30,8 +30,8 @@ const useWindowStore = create(immer((set) => ({
             if (win.isFullscreen) {
                 win.prevWidth = win.width
                 win.prevHeight = win.height
-                win.width = 100
-                win.height = 100
+                win.width = 87
+                win.height = 90
             } else {
                 win.width = win.prevWidth
                 win.height = win.prevHeight
