@@ -5,6 +5,7 @@ import Finder from "./Finder";
 import Text from "./Text";
 import ImageWindowContent from "./ImageWindowContent";
 import Contact from "./Contacts";
+import Photos from "./Photos";
 export {
     Terminal,
     Safari, 
@@ -12,5 +13,6 @@ export {
     Finder,
     Text,
     ImageWindowContent,
-    Contact
+    Contact,
+    Photos
 }
